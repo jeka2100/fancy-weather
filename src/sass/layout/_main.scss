@@ -1,0 +1,6 @@
+.main__content {
+  display: flex;
+  @include media-tablet {
+    flex-wrap: wrap;
+  }
+}

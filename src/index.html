@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=8e90be30-75dd-4958-b7dd-babe267fc754&lang=ru_RU" type="text/javascript"></script>
+  <title>Fancy Weather</title>
+</head>
+<body>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header__content">
+        <div class="header__left">
+          <button class="button header__update"><i class="fas fa-sync-alt"></i></button>
+          <div class="header__langMenu">
+            <button class="button langMenu__lang"><span>EN</span><i class="fas fa-arrow-down"></i></button>
+            <div class="langMenu__menu">
+              <button class="button header__langMenuItem inactive" id="en">EN</button>
+              <button class="button header__langMenuItem inactive" id="ru">RU</button>
+              <button class="button header__langMenuItem inactive" id="be">BE</button>
+            </div>  
+          </div>
+          <button class="button header__temp_F">°F</button>
+          <button class="button header__temp_C">°C</button>    
+        </div>
+        <div class="header__right">
+          <div class="header__error hidden">Something went wrong!</div>
+          <form action="" class="searchForm">
+            <input class="searchForm__input" type="text" placeholder="Search city" autocomplete="off">
+            <button class="button searchForm__button" type="submit">Search</button>
+            <button class="searchForm__microphone"><i class="fas fa-microphone"></i></button>
+            <button class="searchForm__speak"><i class="fas fa-volume-up"></i></button>
+          </form>
+        </div>  
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="wrapper">
+      <div class="main__content hidden">
+        <section class="weatherData">
+          <p class="weatherData__location">Location</p>
+          <p class="weatherData__date">Time</p>
+          <div class="weatherData__blockRow">
+            <p class="weatherData__temp-today">0°</p>
+            <div class="weatherData__blockColumn">
+              <img class="weatherData__icon" src="./img/weather-icons/01d.svg" alt="Weather Icon">
+              <div class="weatherData__weather">
+                <p class="weatherData__description">Description</p>
+                <p class="weatherData__feels">Feels Like</p>
+                <p class="weatherData__wind">Wind</p>
+                <p class="weatherData__humidity">Humidity</p>
+              </div>    
+            </div>
+          </div>
+          <div class="weatherData__blockRow daily">
+            <div class="forecast">
+              <p class="forecast__day">Day</p>
+              <div class="weatherData__blockRow">
+                <p class="forecast__temp">12°</p>
+                <img class="forecast__icon" src="./img/weather-icons/01d.svg" alt="Weather Icon">  
+              </div>
+            </div>
+            <div class="forecast">
+              <p class="forecast__day">Day</p>
+              <div class="weatherData__blockRow">
+                <p class="forecast__temp">12°</p>
+                <img class="forecast__icon" src="./img/weather-icons/01d.svg" alt="Weather Icon">  
+              </div>
+            </div>
+            <div class="forecast">
+              <p class="forecast__day">Day</p>
+              <div class="weatherData__blockRow">
+                <p class="forecast__temp">12°</p>
+                <img class="forecast__icon" src="./img/weather-icons/01d.svg" alt="Weather Icon">  
+              </div>
+            </div>  
+          </div>
+        </section>
+        <section class="mapLocation">
+          <div class="mapLocation__map">
+            <div id="map"></div>
+          </div>    
+          <div class="mapLocation__coordinates">
+            <p class="coordinates__lat"></p>
+            <p class="coordinates__lon"></p>
+          </div>  
+        </section>
+      </div>
+      <div class="loadIndicator">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      </div>
+    </div>
+    <div class="overlay hidden">
+      <div class="modal"></div>
+    </div>
+  </main>
+</body>
+<script src="https://kit.fontawesome.com/0daf11026c.js" crossorigin="anonymous"></script>
+</html>

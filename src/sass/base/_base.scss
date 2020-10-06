@@ -1,0 +1,38 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  @extend %font;
+  @include font($size: 2rem, $weight: bold);
+  background: linear-gradient(rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%), url(../img/bg-default.jpg) no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  @include media-laptop-small {
+    max-width: 900px;
+  }
+  @include media-tablet {
+    max-width: 700px;
+  }
+  @include media-mobile-big {
+    max-width: 425px;
+  }
+  @include media-mobile-small {
+    max-width: 300px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.geoError {
+  text-align: center;
+  color: red;
+}

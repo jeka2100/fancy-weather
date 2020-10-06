@@ -1,0 +1,28 @@
+.mapLocation {
+  width: 40%;
+  @include media-tablet {
+    width: 100%;
+  }
+}
+
+.mapLocation__map {
+  height: 400px;
+  overflow: hidden;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 90% 85%, 90% 98%, 72% 85%, 0 85%);
+  margin: 80px 0 0;
+  @include media-tablet {
+    margin: 0;
+  }
+}
+
+#map {
+  height: 200%;
+  width: 200%;
+  transform: translate(-25%,-25%);
+}
+
+.mapLocation__coordinates {
+  color: $text-color;
+  text-align: end;
+  @include font($size: 2rem, $weight: bold);
+}
